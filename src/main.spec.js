@@ -7,8 +7,8 @@ describe('Main', function () {
     //beforeEach: uma vez antes de cada bloco
     //afterEach: uma vez antes de cada bloco
 
-    before(function () { });
-    after(function () { });
+    before(function () { //tear up //criar mock de dados});
+    after(function () { //tear down //apagar mock de dados});
     beforeEach(function () { arr = [1, 2, 3, 4]; });
     afterEach(function () { });
 
@@ -25,6 +25,10 @@ describe('Main', function () {
     });
     it('should remove the value 4 when use pop in the array', function () {
         console.log(arr.pop() === 4);
+    });
+    it('should have a size of 3 when pop a value from the array', function () {
+        arr.pop();
+        console.log(arr.length);
     });
 
     /*
