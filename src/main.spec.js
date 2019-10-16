@@ -1,4 +1,6 @@
 describe('Main', function () {
+    //para utilização do hook, é ideal iniciar a variavel fora do hook e atribuir um valor a ela dentro do hook
+    var arr;
     //hooks
     //before: uma única vez antes do bloco
     //after: uma vez depois do bloco
@@ -7,21 +9,21 @@ describe('Main', function () {
 
     before(function () { });
     after(function () { });
-    beforeEach(function () { });
+    beforeEach(function () { arr = [1, 2, 3, 4]; });
     afterEach(function () { });
 
+    //caso isole uma variável fora do escopo, vc acaba por depender dos testes anteriores para que os próximos sejam executados
+    // var arr = [1, 2, 3, 4];
+
     it('should have a size of 5 when push another value to the array', function () {
-        var arr = [1, 2, 3, 4];
         arr.push(5);
         console.log(arr.length);
     });
     it('should have a size of 3 when pop a value from the array', function () {
-        var arr = [1, 2, 3, 4];
         arr.pop();
         console.log(arr.length);
     });
     it('should remove the value 4 when use pop in the array', function () {
-        var arr = [1, 2, 3, 4];
         console.log(arr.pop() === 4);
     });
 
