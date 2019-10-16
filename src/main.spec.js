@@ -5,13 +5,25 @@ describe('Main', function () {
     //beforeEach: uma vez antes de cada bloco
     //afterEach: uma vez antes de cada bloco
 
-    before(function () { console.log('before'); });
-    after(function () { console.log('after'); });
-    beforeEach(function () { console.log('beforeEach'); });
-    afterEach(function () { console.log('afterEach'); });
+    before(function () { });
+    after(function () { });
+    beforeEach(function () { });
+    afterEach(function () { });
 
-    it('task 0', function () { console.log('task 0'); });
-    it('task 1', function () { console.log('task 1'); });
+    it('should have a size of 5 when push another value to the array', function () {
+        var arr = [1, 2, 3, 4];
+        arr.push(5);
+        console.log(arr.length);
+    });
+    it('should have a size of 3 when pop a value from the array', function () {
+        var arr = [1, 2, 3, 4];
+        arr.pop();
+        console.log(arr.length);
+    });
+    it('should remove the value 4 when use pop in the array', function () {
+        var arr = [1, 2, 3, 4];
+        console.log(arr.pop() === 4);
+    });
 
     /*
     describe('Method 0', function () {
