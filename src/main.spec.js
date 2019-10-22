@@ -7,8 +7,8 @@ describe('Main', function () {
     //beforeEach: uma vez antes de cada bloco
     //afterEach: uma vez antes de cada bloco
 
-    before(function () { //tear up //criar mock de dados});
-    after(function () { //tear down //apagar mock de dados});
+    before(function () { }); //tear up //criar mock de dados
+    after(function () { }); //tear down //apagar mock de dados
     beforeEach(function () { arr = [1, 2, 3, 4]; });
     afterEach(function () { });
 
@@ -51,4 +51,4 @@ describe('Main', function () {
         context('Case B', function () { });
     });
     */
-});  
+});
