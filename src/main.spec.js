@@ -1,3 +1,5 @@
+var expect = require('chai').expect;
+
 describe('Main', function () {
     //para utilização do hook, é ideal iniciar a variavel fora do hook e atribuir um valor a ela dentro do hook
     var arr;
@@ -17,6 +19,8 @@ describe('Main', function () {
 
     it('should have a size of 5 when push another value to the array', function () {
         arr.push(5);
+        //expect() in use
+        expect(arr).to.have.lengthOf(5);
         console.log(arr.length);
     });
     it('should have a size of 3 when pop a value from the array', function () {
