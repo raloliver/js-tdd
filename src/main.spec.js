@@ -32,4 +32,11 @@ describe('Calc', function () {
         });
 
     });
+
+    //
+    describe('Sum', function () {
+        it('should return 4 when `sum(2,2)`', function () {
+            expect(calc.sum(2, 2)).to.be.equal(4);
+        });
+    });
 });
