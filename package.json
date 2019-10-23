@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha src/**/*.spec.js"
+    "test": "./node_modules/.bin/mocha src/**/*.spec.js",
+    "test:watch": "./node_modules/.bin/mocha src/**/*.spec.js --watch"
   },
   "keywords": [],
   "author": "",
