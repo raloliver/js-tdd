@@ -3,8 +3,7 @@ var calc = require('../src/main');
 
 describe('Calc', function () {
 
-    //init with smoke tests
-    //check methods
+    //init with smoke tests    
     describe('Smoke test', function () {
 
         it('should exits the `calc` lib', function () {
@@ -33,10 +32,31 @@ describe('Calc', function () {
 
     });
 
-    //
+    //check methods
     describe('Sum', function () {
         it('should return 4 when `sum(2,2)`', function () {
             expect(calc.sum(2, 2)).to.be.equal(4);
+        });
+    });
+
+    describe('Sub', function () {
+        it('should return 4 when `sub(6,2)`', function () {
+            expect(calc.sub(6, 2)).to.be.equal(4);
+        });
+        it('should return -4 when `sub(6,10)`', function () {
+            expect(calc.sub(6, 10)).to.be.equal(-4);
+        });
+    });
+
+    describe('Mult', function () {
+        it('should return 4 when `mult(2,2)`', function () {
+            expect(calc.mult(2, 2)).to.be.equal(4);
+        });
+    });
+
+    describe('Div', function () {
+        it('should return `not divided by zero` when divide by zero', function () {
+            expect(calc.div(4, 0)).to.be.equal('not divided by zero');
         });
     });
 });
