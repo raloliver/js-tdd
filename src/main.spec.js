@@ -14,6 +14,11 @@ describe('Main', function () {
     beforeEach(function () { arr = [1, 2, 3, 4]; });
     afterEach(function () { });
 
+    //test type or if is not undefined (smoke test)
+    it('should be an array', function () {
+        expect(arr).to.be.a('array');
+    });
+
     //caso isole uma variável fora do escopo, vc acaba por depender dos testes anteriores para que os próximos sejam executados
     // var arr = [1, 2, 3, 4];
 
@@ -21,38 +26,20 @@ describe('Main', function () {
         arr.push(5);
         //expect() in use
         expect(arr).to.have.lengthOf(5);
-        console.log(arr.length);
     });
     it('should have a size of 3 when pop a value from the array', function () {
         arr.pop();
-        console.log(arr.length);
     });
     it('should remove the value 4 when use pop in the array', function () {
         console.log(arr.pop() === 4);
+        //expect() in use
+        expect(arr).to.not.include(4); //include or contain
+    });
+    it('should return true when pop 3 from the', function () {
+        expect(arr.pop() === 4 ).to.be.true;
     });
     it('should have a size of 3 when pop a value from the array', function () {
         arr.pop();
-        console.log(arr.length);
+        expect(arr).to.have.lengthOf(3);
     });
-
-    /*
-    describe('Method 0', function () {
-        context('Case A', function () {
-            it('should happen on Case A in Method 0)', function () {
-                //waint to happens
-                //input (method)
-                //output (return)
-                throw new Error('Ops... ERROR!');
-            });
-        });
-        context('Case B', function () {
-            it.skip('should happen on Case B in Method 0 [0])', function () { });
-            it('should happen on Case B in Method 0 [1])', function () { });
-        });
-    });
-    describe('Method 1', function () {
-        // context.only('Case A', function () {});
-        context('Case B', function () { });
-    });
-    */
 });
