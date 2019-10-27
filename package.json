@@ -1,10 +1,11 @@
 {
   "name": "js-tdd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha src/**/*.spec.js"
+    "test": "./node_modules/.bin/mocha src/**/*.spec.js",
+    "test:watch": "./node_modules/.bin/mocha src/**/*.spec.js --watch"
   },
   "keywords": [],
   "author": "",

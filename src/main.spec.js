@@ -1,54 +1,62 @@
-describe('Main', function () {
-    //para utilização do hook, é ideal iniciar a variavel fora do hook e atribuir um valor a ela dentro do hook
-    var arr;
-    //hooks
-    //before: uma única vez antes do bloco
-    //after: uma vez depois do bloco
-    //beforeEach: uma vez antes de cada bloco
-    //afterEach: uma vez antes de cada bloco
+var expect = require('chai').expect;
+var calc = require('../src/main');
 
-    before(function () { }); //tear up //criar mock de dados
-    after(function () { }); //tear down //apagar mock de dados
-    beforeEach(function () { arr = [1, 2, 3, 4]; });
-    afterEach(function () { });
+describe('Calc', function () {
 
-    //caso isole uma variável fora do escopo, vc acaba por depender dos testes anteriores para que os próximos sejam executados
-    // var arr = [1, 2, 3, 4];
+    //init with smoke tests    
+    describe('Smoke test', function () {
 
-    it('should have a size of 5 when push another value to the array', function () {
-        arr.push(5);
-        console.log(arr.length);
-    });
-    it('should have a size of 3 when pop a value from the array', function () {
-        arr.pop();
-        console.log(arr.length);
-    });
-    it('should remove the value 4 when use pop in the array', function () {
-        console.log(arr.pop() === 4);
-    });
-    it('should have a size of 3 when pop a value from the array', function () {
-        arr.pop();
-        console.log(arr.length);
-    });
-
-    /*
-    describe('Method 0', function () {
-        context('Case A', function () {
-            it('should happen on Case A in Method 0)', function () {
-                //waint to happens
-                //input (method)
-                //output (return)
-                throw new Error('Ops... ERROR!');
-            });
+        it('should exits the `calc` lib', function () {
+            expect(calc).to.exist;
         });
-        context('Case B', function () {
-            it.skip('should happen on Case B in Method 0 [0])', function () { });
-            it('should happen on Case B in Method 0 [1])', function () { });
+
+        it('should exits the `sum` method', function () {
+            expect(calc.sum).to.exist;
+            expect(calc.sum).to.be.a('function');
+        });
+
+        it('should exits the `sub` method', function () {
+            expect(calc.sub).to.exist;
+            expect(calc.sub).to.be.a('function');
+        });
+
+        it('should exits the `mult` method', function () {
+            expect(calc.mult).to.exist;
+            expect(calc.mult).to.be.a('function');
+        });
+
+        it('should exits the `div` method', function () {
+            expect(calc.div).to.exist;
+            expect(calc.div).to.be.a('function');
+        });
+
+    });
+
+    //check methods
+    describe('Sum', function () {
+        it('should return 4 when `sum(2,2)`', function () {
+            expect(calc.sum(2, 2)).to.be.equal(4);
         });
     });
-    describe('Method 1', function () {
-        // context.only('Case A', function () {});
-        context('Case B', function () { });
+
+    describe('Sub', function () {
+        it('should return 4 when `sub(6,2)`', function () {
+            expect(calc.sub(6, 2)).to.be.equal(4);
+        });
+        it('should return -4 when `sub(6,10)`', function () {
+            expect(calc.sub(6, 10)).to.be.equal(-4);
+        });
     });
-    */
+
+    describe('Mult', function () {
+        it('should return 4 when `mult(2,2)`', function () {
+            expect(calc.mult(2, 2)).to.be.equal(4);
+        });
+    });
+
+    describe('Div', function () {
+        it('should return `not divided by zero` when divide by zero', function () {
+            expect(calc.div(4, 0)).to.be.equal('not divided by zero');
+        });
+    });
 });
