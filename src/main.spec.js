@@ -24,4 +24,8 @@ describe('Main', () => {
     it('should return `FizzBuzz` when multiple by 3 and 5', () => {
         expect(FizzBuzz(15)).to.be.equal('FizzBuzz');
     });
+
+    it('should return the current number when non-multiple', () => {
+        expect(FizzBuzz(7)).to.be.equal(7);
+    });
 });
